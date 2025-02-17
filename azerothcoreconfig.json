@@ -1,1 +1,19 @@
-[]
+[
+    {
+        "DisplayName": "Realm ID",
+        "Category": "Worldserver Settings",
+        "Description": "",
+        "Keywords": "realm,id",
+        "FieldName": "RealmID",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "RealmID",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "1",
+        "Placeholder": "1",
+        "Suffix": "",
+        "Hidden": false,
+        "SkipIfEmpty": false,
+        "EnumValues": {}
+    }
+]

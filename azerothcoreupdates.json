@@ -1,1 +1,12 @@
-[]
+[
+    {
+        "UpdateStageName": "Azerothcore",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "GithubRelease",
+        "UpdateSourceArgs": "azerothcore/azerothcore-wotlk",
+        "UnzipUpdateSource": false,
+        "OverwriteExistingFiles": false,
+        "DeleteAfterExtract": true,
+        "OneShot": false
+    }
+]
