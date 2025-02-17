@@ -1,8 +1,9 @@
 [
     {
         "DisplayName": "Realm ID",
-        "Category": "Worldserver Settings",
-        "Description": "",
+        "Category": "Worldserver Settings:public",
+        "Subcategory": "Database & Connections:database:1",
+        "Description": "The ID of the realm. RealmID must match the realmlist inside the auth database.",
         "Keywords": "realm,id",
         "FieldName": "RealmID",
         "InputType": "text",
@@ -11,9 +12,111 @@
         "IncludeInCommandLine": false,
         "DefaultValue": "1",
         "Placeholder": "1",
-        "Suffix": "",
         "Hidden": false,
         "SkipIfEmpty": false,
         "EnumValues": {}
+    },
+    {
+        "DisplayName": "Player Limit",
+        "Category": "Worldserver Settings:public",
+        "Subcategory": "Server:dns:1",
+        "Description": "Maximum number of players in the world. Excluding Mods, GMs and Admins. (0 = no limit)",
+        "Keywords": "playerlimit",
+        "FieldName": "PlayerLimit",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "PlayerLimit",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "0",
+        "Placeholder": "0",
+        "Hidden": false,
+        "SkipIfEmpty": false,
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Game Type",
+        "Category": "Worldserver Settings:public",
+        "Subcategory": "Server:dns:1",
+        "Description": "Server realm type.",
+        "Keywords": "realmtype",
+        "FieldName": "GameType",
+        "InputType": "enum",
+        "ParamFieldName": "GameType",
+        "DefaultValue": "0",
+        "Placeholder": "0",
+        "EnumValues": {
+            "0": "Normal",
+            "1": "PVP",
+            "4": "Normal",
+            "6": "Role Play",
+            "8": "Role Play PVP",
+            "16": "Free for all PVP"
+        }
+    },
+    {
+        "DisplayName": "Realm Zone",
+        "Category": "Worldserver Settings:public",
+        "Subcategory": "Server:dns:1",
+        "Description": "Server realm zone.",
+        "Keywords": "realmzone",
+        "FieldName": "RealmZone",
+        "InputType": "enum",
+        "ParamFieldName": "RealmZone",
+        "DefaultValue": "2",
+        "Placeholder": "2",
+        "EnumValues": {
+            "2": "United States",
+            "3": "Oceanic",
+            "4": "Latin America",
+            "6": "Korea",
+            "8": "English",
+            "9": "German",
+            "10": "French",
+            "11": "Spanish",
+            "12": "Russian",
+            "14": "Taiwan",
+            "16": "China"
+        }
+    },
+    {
+        "DisplayName": "Locale",
+        "Category": "Worldserver Settings:public",
+        "Subcategory": "Server:dns:1",
+        "Description": "Server locale.",
+        "Keywords": "locale",
+        "FieldName": "DBC.Locale",
+        "InputType": "enum",
+        "ParamFieldName": "DBC.Locale",
+        "DefaultValue": "255",
+        "Placeholder": "255",
+        "EnumValues": {
+            "255": "Auto Detect",
+            "0": "English",
+            "1": "Korean",
+            "2": "French",
+            "3": "German",
+            "4": "Chinese",
+            "5": "Taiwanese",
+            "6": "Spanish",
+            "7": "Spanish Mexico",
+            "8": "Russian"
+        }
+    },
+    {
+        "DisplayName": "Expansion",
+        "Category": "Worldserver Settings:public",
+        "Subcategory": "Server:dns:1",
+        "Description": "Server Expansion.",
+        "Keywords": "expansion",
+        "FieldName": "Expansion",
+        "InputType": "enum",
+        "ParamFieldName": "Expansion",
+        "DefaultValue": "2",
+        "Placeholder": "2",
+        "EnumValues": {
+            "0": "Vanilla",
+            "1": "The Burning Crusade",
+            "2": "Wrath of the Litch King"
+        }
     }
 ]
