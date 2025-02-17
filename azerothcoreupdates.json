@@ -2,11 +2,13 @@
     {
         "UpdateStageName": "Azerothcore",
         "UpdateSourcePlatform": "Linux",
-        "UpdateSource": "GithubRelease",
-        "UpdateSourceArgs": "git clone https://github.com/azerothcore/azerothcore-wotlk.git",
-        "UnzipUpdateSource": false,
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://github.com/azerothcore/azerothcore-wotlk/archive/refs/heads/master.zip",
+        "UpdateSourceArgs": "azerothcore/azerothcore-wotlk",
+        "UpdateSourceTarget": "./",
+        "UnzipUpdateSource": true,
         "OverwriteExistingFiles": true,
-        "DeleteAfterExtract": false,
+        "DeleteAfterExtract": true,
         "OneShot": false
     }
 ]
