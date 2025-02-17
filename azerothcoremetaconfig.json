@@ -1,0 +1,17 @@
+[
+    {
+        "ConfigFile": "etc/dist/env/worldserver.conf",
+        "ConfigType": "",
+        "AutoMap": false
+    },
+    {
+        "ConfigFile": "etc/dist/env/authserver.conf",
+        "ConfigType": "",
+        "AutoMap": false
+    },
+    {
+        "ConfigFile": "etc/dist/env/dbimport.conf",
+        "ConfigType": "",
+        "AutoMap": false
+    }
+]

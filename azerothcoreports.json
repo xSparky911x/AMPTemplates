@@ -1,0 +1,30 @@
+[
+    {
+        "Protocol": "TCP",
+        "Port": "8085",
+        "Name": "Main Game Port",
+        "Description": "Port used for main game traffic",
+        "Ref": "MainGamePort"
+    },
+    {
+        "Protocol": "TCP",
+        "Port": "3724",
+        "Name": "Authserver",
+        "Description": "Port used for main game traffic",
+        "Ref": "Authserver"
+    },
+    {
+        "Protocol": "TCP",
+        "Port": "3306",
+        "Name": "Database",
+        "Description": "Port used for main game traffic",
+        "Ref": "Database"
+    },
+    {
+        "Protocol": "TCP",
+        "Port": "3443",
+        "Name": "Remote Admin Port",
+        "Description": "Port used for main game traffic",
+        "Ref": "RemoteAdminPort"
+    }
+]
