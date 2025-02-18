@@ -11,43 +11,44 @@ Meta.ContainerPolicyReason=
 Meta.Prerequsites=[]
 Meta.EndpointURIFormat={ip}:{GenericModule.App.Ports.$GamePort}
 Meta.AppConfigId=52747302-09f1-43fe-a2de-eeed049bb236
-App.AdminMethod=STDIO
+
+# Application settings
+App.DisplayName=AzerothCore
+App.AdminMethod=Telnet
+App.RemoteAdminPort=3443
 App.HasReadableConsole=true
 App.HasWritableConsole=true
-App.DisplayName=Azerothcore
 App.CommandLineArgs={{$PlatformArgs}} {{$FormattedArgs}}
-App.WindowsCommandLineArgs=
 App.CommandLineParameterFormat=-{0} "{1}"
 App.CommandLineParameterDelimiter= 
 App.RapidStartup=false
 App.ApplicationReadyMode=Immediate
 App.ExitMethod=String
-App.ExitString=docker compose down
+App.ExitString="docker compose down"
 App.ExitTimeout=30
 App.ExitFile=app_exit.lck
 App.SupportsLiveSettingsChanges=False
 App.LiveSettingChangeCommandFormat=set {0} "{1}"
+
+# Network & Ports
 App.ApplicationIPBinding=0.0.0.0
 App.AdminPortRef=RemoteAdminPort
 App.UniversalSleepApplicationUDPPortRef=GamePort1
 App.PrimaryApplicationPortRef=GamePort1
 App.UniversalSleepSteamQueryPortRef=SteamQueryPort
 App.MaxUsers=0
+
+# Remote Console / RCON
 App.UseRandomAdminPassword=True
 App.RemoteAdminPassword=
 App.AdminLoginTransform=None
 App.RCONConnectDelaySeconds=30
 App.RCONConnectRetrySeconds=15
-App.RCONHeartbeatCommand=ping
+App.RCONHeartbeatCommand="server info"
 App.RCONHeartbeatMinutes=0
 App.TelnetLoginFormat={0}
-App.SupportsUniversalSleep=False
-App.WakeupMode=Any
-App.TemplateMatchRegex={{(\$?[\w]+)}}
-App.MonitorChildProcess=False
-App.MonitorChildProcessWaitMs=1000
-App.MonitorChildProcessName=
-App.Compatibility=None
+
+# Console Settings
 Console.FilterMatchRegex=
 Console.FilterMatchReplacement=
 Console.ThrowawayMessageRegex=(WARNING|ERROR): Shader.+
@@ -65,16 +66,22 @@ Console.AppReadyRegex=^$
 Console.UserJoinRegex=^$
 Console.UserLeaveRegex=^$
 Console.UserChatRegex=^$
+
+# Meta Information
 Meta.OS=2
-Meta.ConfigManifest=azerothcoreconfig.json
-Meta.MetaConfigManifest=azerothcoremetaconfig.json
-Meta.ConfigRoot=azerothcore.kvp
-App.RootDir=./azerothcore-wotlk/
-Meta.DisplayImageSource=url:https://www.azerothcore.org/images/logo.png
-App.BaseDirectory=./azerothcore-wotlk/
-App.WorkingDir=./azerothcore-wotlk/
+Meta.ConfigManifest="azerothcoreconfig.json"
+Meta.MetaConfigManifest="azerothcoremetaconfig.json"
+Meta.ConfigRoot="azerothcore.kvp"
+Meta.DisplayImageSource="url:https://www.azerothcore.org/images/logo.png"
+
+# Working Directories
+App.RootDir="./azerothcore-wotlk/"
+App.BaseDirectory="./azerothcore-wotlk/"
+App.WorkingDir="./azerothcore-wotlk/"
 App.ExecutableWin=
-App.ExecutableLinux=azerothcorestart
-App.LinuxCommandLineArgs=
-App.Ports=@IncludeJson[azerothcoreports.json]
-App.UpdateSources=@IncludeJson[azerothcoreupdates.json]
+App.ExecutableLinux="docker"
+App.LinuxCommandLineArgs="compose up -d --build"
+
+# Included JSON Files
+App.Ports=@IncludeJson["azerothcoreports.json"]
+App.UpdateSources=@IncludeJson["azerothcoreupdates.json"]
