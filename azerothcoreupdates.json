@@ -1,13 +1,12 @@
 [
     {
-        "UpdateStageName": "Azerothcore",
+        "UpdateStageName": "Download Azerothcore",
         "UpdateSourcePlatform": "Linux",
-        "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://github.com/azerothcore/azerothcore-wotlk/archive/refs/heads/master.zip",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"cd azerothcore && git clone https://github.com/azerothcore/azerothcore-wotlk.git",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
-        "UnzipUpdateSource": true,
         "OverwriteExistingFiles": true,
-        "DeleteAfterExtract": true,
-        "OneShot": false
+        "SkipOnFailure": false
     }
 ]
