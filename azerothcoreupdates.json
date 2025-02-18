@@ -1,1 +1,11 @@
-[]
+[
+    {
+        "UpdateStageName": "Download Azerothcore",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \" git pull https://github.com/azerothcore/azerothcore-wotlk.git",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": true
+    }
+]
