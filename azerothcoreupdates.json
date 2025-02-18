@@ -4,7 +4,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"cd azerothcore && git clone https://github.com/azerothcore/azerothcore-wotlk.git",
+        "UpdateSourceArgs": "git clone https://github.com/azerothcore/azerothcore-wotlk.git {{$FullBaseDir}}",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "OverwriteExistingFiles": true,
         "SkipOnFailure": false
