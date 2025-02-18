@@ -6,6 +6,6 @@
         "UpdateSourceData": "/bin/bash",
         "UpdateSourceArgs": "-c \" git clone https://github.com/azerothcore/azerothcore-wotlk.git",
         "OverwriteExistingFiles": true,
-        "SkipOnFailure": false
+        "SkipOnFailure": true
     }
 ]
