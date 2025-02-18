@@ -24,7 +24,7 @@ App.CommandLineParameterDelimiter=
 App.RapidStartup=false
 App.ApplicationReadyMode=Immediate
 App.ExitMethod=String
-App.ExitString="docker compose down"
+App.ExitString=docker compose down
 App.ExitTimeout=30
 App.ExitFile=app_exit.lck
 App.SupportsLiveSettingsChanges=False
@@ -44,7 +44,7 @@ App.RemoteAdminPassword=
 App.AdminLoginTransform=None
 App.RCONConnectDelaySeconds=30
 App.RCONConnectRetrySeconds=15
-App.RCONHeartbeatCommand="server info"
+App.RCONHeartbeatCommand=server info
 App.RCONHeartbeatMinutes=0
 App.TelnetLoginFormat={0}
 
@@ -69,19 +69,19 @@ Console.UserChatRegex=^$
 
 # Meta Information
 Meta.OS=2
-Meta.ConfigManifest="azerothcoreconfig.json"
-Meta.MetaConfigManifest="azerothcoremetaconfig.json"
-Meta.ConfigRoot="azerothcore.kvp"
-Meta.DisplayImageSource="url:https://www.azerothcore.org/images/logo.png"
+Meta.ConfigManifest=azerothcoreconfig.json
+Meta.MetaConfigManifest=azerothcoremetaconfig.json
+Meta.ConfigRoot=azerothcore.kvp
+Meta.DisplayImageSource=url:https://www.azerothcore.org/images/logo.png
 
 # Working Directories
-App.RootDir="./azerothcore-wotlk/"
-App.BaseDirectory="./azerothcore-wotlk/"
-App.WorkingDir="./azerothcore-wotlk/"
+App.RootDir=./azerothcore-wotlk/
+App.BaseDirectory=./azerothcore-wotlk/
+App.WorkingDir=./azerothcore-wotlk/
 App.ExecutableWin=
-App.ExecutableLinux="docker"
-App.LinuxCommandLineArgs="compose up -d --build"
+App.ExecutableLinux=docker
+App.LinuxCommandLineArgs=compose up -d --build
 
 # Included JSON Files
-App.Ports=@IncludeJson["azerothcoreports.json"]
-App.UpdateSources=@IncludeJson["azerothcoreupdates.json"]
+App.Ports=@IncludeJson[azerothcoreports.json]
+App.UpdateSources=@IncludeJson[azerothcoreupdates.json]
