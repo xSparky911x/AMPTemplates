@@ -1,10 +1,10 @@
 [
     {
-        "UpdateStageName": "Download/Update Azerothcore",
+        "UpdateStageName": "Download/Update AzerothCore",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \" git -C azerothcore-wotlk pull || git clone https://github.com/azerothcore/azerothcore-wotlk.git",
+        "UpdateSourceArgs": "-c \"[ -d azerothcore-wotlk/.git ] && git -C azerothcore-wotlk pull || git clone https://github.com/azerothcore/azerothcore-wotlk.git\"",
         "OverwriteExistingFiles": true,
         "SkipOnFailure": true
     }
