@@ -79,7 +79,7 @@ App.RootDir=azerothcore-wotlk/
 App.BaseDirectory=azerothcore-wotlk/
 App.WorkingDir=
 App.ExecutableWin=
-App.ExecutableLinux=/usr/bin/env
+App.ExecutableLinux=/bin/bash
 App.LinuxCommandLineArgs=docker compose up -d --build
 
 # Included JSON Files
