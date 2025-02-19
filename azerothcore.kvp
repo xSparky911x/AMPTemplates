@@ -75,9 +75,9 @@ Meta.ConfigRoot=azerothcore.kvp
 Meta.DisplayImageSource=url:https://www.azerothcore.org/images/logo.png
 
 # Working Directories
-App.RootDir=./azerothcore-wotlk/
-App.BaseDirectory=./azerothcore-wotlk/
-App.WorkingDir=./azerothcore-wotlk/
+App.RootDir=azerothcore-wotlk/
+App.BaseDirectory=azerothcore-wotlk/
+App.WorkingDir=
 App.ExecutableWin=
 App.ExecutableLinux=/usr/bin/env
 App.LinuxCommandLineArgs=docker compose up -d --build
