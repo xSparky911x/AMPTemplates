@@ -80,7 +80,7 @@ App.BaseDirectory=azerothcore-wotlk/
 App.WorkingDir=
 App.ExecutableWin=
 App.ExecutableLinux=/usr/bin/env
-App.LinuxCommandLineArgs=compose up -d --build
+App.LinuxCommandLineArgs=docker compose up -d --build
 
 # Included JSON Files
 App.Ports=@IncludeJson[azerothcoreports.json]
