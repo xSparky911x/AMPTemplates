@@ -1,4 +1,5 @@
 #!/bin/bash
+export PATH="/usr/bin:/usr/local/bin:$PATH"
 
 echo -e "AzerothCore integration for Cubecoders AMP Generic Module\n      by xSparky911x\n\nStarting AzerothCore WotLK (Docker)..."
 
