@@ -8,25 +8,25 @@ command="server start"
 while true; do
     case $command in
         'server shutdown'* )  
-            /usr/bin/docker docker compose down
+            /usr/bin/docker compose down
             echo "AzerothCore stopped. You can now exit this terminal."
             exit 0 
             ;;
 
         'server stop' )  
-            /usr/bin/docker docker compose down
+            /usr/bin/docker compose down
             echo "AzerothCore stopped."
             ;;
 
         'server start' )  
-            /usr/bin/docker docker compose down
-            /usr/bin/docker docker compose up -d --build
+            /usr/bin/docker compose down
+            /usr/bin/docker compose up -d --build
             echo "WORLD: World initialized"
             ;;
 
         'console' )  
             echo "Attaching to worldserver... (Press Ctrl+P + Ctrl+Q to detach safely)"
-            /usr/bin/docker docker attach worldserver
+            /usr/bin/docker attach worldserver
             echo "Disconnected from Worldserver."
             ;;
 
