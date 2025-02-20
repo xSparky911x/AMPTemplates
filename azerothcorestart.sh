@@ -1,10 +1,12 @@
 #!/bin/bash
 export PATH="/usr/bin:/usr/local/bin:$PATH"
 
-echo $PATH > /tmp/amp_path.log
+echo "Current PATH: $PATH" >> /tmp/amp_debug.log
+printenv >> /tmp/amp_debug.log
+
 
 DOCKER_CMD="$(which docker)"
-DOCKER_COMPOSE_CMD="$(which docker-compose)"
+DOCKER_COMPOSE_CMD="$(which docker compose)"
 
 if [[ -z "$DOCKER_CMD" ]]; then
     echo "Error: Docker not found. Make sure Docker is installed and accessible."
