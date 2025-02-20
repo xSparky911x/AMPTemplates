@@ -12,7 +12,7 @@
         "UpdateStageName": "Server Start Script Download",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://github.com/xSparky911x/AMPTemplates/blob/main/azerothcorestart.sh",
+        "UpdateSourceData": "https://raw.githubusercontent.com/xSparky911x/AMPTemplates/main/azerothcorestart.sh",
         "UpdateSourceArgs": "azerothcorestart.sh",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "OverwriteExistingFiles": true
