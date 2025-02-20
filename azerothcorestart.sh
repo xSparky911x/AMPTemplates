@@ -1,6 +1,13 @@
 #!/bin/bash
 export PATH="/usr/bin:/usr/local/bin:$PATH"
 
+DOCKER_CMD="$(which docker)"
+
+if [[ -z "$DOCKER_CMD" ]]; then
+    echo "Error: Docker not found. Make sure Docker is installed and accessible."
+    exit 1
+fi
+
 echo -e "AzerothCore integration for Cubecoders AMP Generic Module\n      by xSparky911x\n\nStarting AzerothCore WotLK (Docker)..."
 
 command="server start"
@@ -8,25 +15,25 @@ command="server start"
 while true; do
     case $command in
         'server shutdown'* )  
-            /usr/bin/docker compose down
+            $DOCKER_CMD compose down
             echo "AzerothCore stopped. You can now exit this terminal."
             exit 0 
             ;;
 
         'server stop' )  
-            /usr/bin/docker compose down
+            $DOCKER_CMD compose down
             echo "AzerothCore stopped."
             ;;
 
         'server start' )  
-            /usr/bin/docker compose down
-            /usr/bin/docker compose up -d --build
+            $DOCKER_CMD compose down
+            $DOCKER_CMD compose up -d --build
             echo "WORLD: World initialized"
             ;;
 
         'console' )  
             echo "Attaching to worldserver... (Press Ctrl+P + Ctrl+Q to detach safely)"
-            /usr/bin/docker attach worldserver
+            $DOCKER_CMD attach worldserver
             echo "Disconnected from Worldserver."
             ;;
 
