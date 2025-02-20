@@ -7,5 +7,14 @@
         "UpdateSourceArgs": "-c \"[ -d azerothcore-wotlk/.git ] && git -C azerothcore-wotlk pull || git clone https://github.com/azerothcore/azerothcore-wotlk.git\"",
         "OverwriteExistingFiles": true,
         "SkipOnFailure": true
+    },
+    {
+        "UpdateStageName": "Server Start Script Download",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://github.com/xSparky911x/AMPTemplates/blob/main/azerothcorestart.sh",
+        "UpdateSourceArgs": "azerothcorestart.sh",
+        "UpdateSourceTarget": "{{$FullBaseDir}}",
+        "OverwriteExistingFiles": true
     }
 ]
