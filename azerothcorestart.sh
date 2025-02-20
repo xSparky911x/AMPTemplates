@@ -7,19 +7,19 @@ command="server start"
 while true; do
     case $command in
         'server shutdown'* )  
-            docker-compose down
+            docker compose down
             echo "AzerothCore stopped. You can now exit this terminal."
             exit 0 
             ;;
 
         'server stop' )  
-            docker-compose down
+            docker compose down
             echo "AzerothCore stopped."
             ;;
 
         'server start' )  
-            docker-compose down
-            docker-compose up -d --build
+            docker compose down
+            docker compose up -d --build
             echo "WORLD: World initialized"
             ;;
 
