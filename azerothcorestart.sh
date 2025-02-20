@@ -29,17 +29,20 @@ command="server start"
 while true; do
     case $command in
         'server shutdown'* )  
+            echo "Executing: $DOCKER_COMPOSE_CMD down" >> $LOG_FILE
             $DOCKER_COMPOSE_CMD down
             echo "AzerothCore stopped. You can now exit this terminal." >> $LOG_FILE
             exit 0 
             ;;
 
         'server stop' )  
+            echo "Executing: $DOCKER_COMPOSE_CMD down" >> $LOG_FILE
             $DOCKER_COMPOSE_CMD down
             echo "AzerothCore stopped." >> $LOG_FILE
             ;;
 
         'server start' )  
+            echo "Executing: $DOCKER_COMPOSE_CMD down && $DOCKER_COMPOSE_CMD up -d --build" >> $LOG_FILE
             $DOCKER_COMPOSE_CMD down
             $DOCKER_COMPOSE_CMD up -d --build
             echo "WORLD: World initialized" >> $LOG_FILE
