@@ -79,8 +79,8 @@ App.RootDir=azerothcore-wotlk/
 App.BaseDirectory=azerothcore-wotlk/
 App.WorkingDir=
 App.ExecutableWin=
-App.ExecutableLinux=/bin/bash
-App.LinuxCommandLineArgs=azerothcorestart.sh
+App.ExecutableLinux=./azerothcore-wotlk/azerothcorestart.sh
+App.LinuxCommandLineArgs=
 
 # Included JSON Files
 App.Ports=@IncludeJson[azerothcoreports.json]
