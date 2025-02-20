@@ -79,7 +79,7 @@ App.RootDir=azerothcore-wotlk/
 App.BaseDirectory=azerothcore-wotlk/
 App.WorkingDir=
 App.ExecutableWin=
-App.ExecutableLinux=./azerothcore-wotlk/azerothcorestart.sh
+App.ExecutableLinux=./azerothcorestart.sh
 App.LinuxCommandLineArgs=
 
 # Included JSON Files
