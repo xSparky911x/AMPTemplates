@@ -1,29 +1,54 @@
 #!/bin/bash
-echo $'AzerothCore integration for Cubecoders AMP Generic Module \n      by xSparky911x    \n \n \n Starting AzerothCore Wotlk (docker)...';
 
-command="server start";
+echo -e "AzerothCore integration for Cubecoders AMP Generic Module\n      by xSparky911x\n\nStarting AzerothCore WotLK (Docker)..."
 
-while [ true ] ; do
+command="server start"
 
-case $command in
-'server shutdown'* )  docker compose down && echo "Azerothcore stopped. you can now exit this terminal" && exit 0 ;;
+while true; do
+    case $command in
+        'server shutdown'* )  
+            docker-compose down
+            echo "AzerothCore stopped. You can now exit this terminal."
+            exit 0 
+            ;;
 
-'server stop' )  docker compose down && echo "Azerothcore stopped.";;
+        'server stop' )  
+            docker-compose down
+            echo "AzerothCore stopped."
+            ;;
 
-'server start' )   docker compose down && docker-compose up -d --build && echo "WORLD: World initialized";;
+        'server start' )  
+            docker-compose down
+            docker-compose up -d --build
+            echo "WORLD: World initialized"
+            ;;
 
-'console' )  docker attach worldserver && echo "disconnected from Worldserver.";;
+        'console' )  
+            echo "Attaching to worldserver... (Press Ctrl+P + Ctrl+Q to detach safely)"
+            docker attach worldserver
+            echo "Disconnected from Worldserver."
+            ;;
 
-'help' )    echo $'AzerothCore integration for Cubecoders AMP Generic Module \n Terminal commands for AzerothCore: \n \n server start -- trys to stop the currently running docker-compse containers and starts them. \n \n server stop  -- stops the docker-compose containers. \n \n server shutdown   -- stops the docker-compose containers if they are runnning and closes this Terminal. \n \n console   -- connects the Terminal to the worldserver. _-=# !! IMPORTANT!!#=-_ while you connected to the worldserver AMP cannot stop the server! you have to manualy stop it using server exit! \n \n  exit  -- closes this terminal, containers are not stopped!  ' ;;
+        'help' )  
+            echo -e "AzerothCore integration for Cubecoders AMP Generic Module\n"
+            echo "Terminal commands for AzerothCore:"
+            echo "  server start   - Stops currently running containers and starts them."
+            echo "  server stop    - Stops the running Docker containers."
+            echo "  server shutdown - Stops the containers and closes this terminal."
+            echo "  console        - Attaches to the worldserver console."
+            echo "                   !! IMPORTANT: While connected, AMP cannot stop the server! Use 'server exit' manually."
+            echo "  exit           - Closes this terminal without stopping containers."
+            ;;
 
-'exit' ) exit 0;;
+        'exit' )  
+            exit 0 
+            ;;
 
-'kill' )    echo "Wrong command, try again" ;;
+        * )  
+            echo "Invalid command: '$command'. Type 'help' for available commands."
+            ;;
+    esac
 
-
-* )     echo "Wrong command $command, try again";;
-esac
-echo "waiting for command... type help to show commanads"
-read command ;
-done
+    echo "Waiting for command... (Type 'help' for a list of commands)"
+    read command
 done
