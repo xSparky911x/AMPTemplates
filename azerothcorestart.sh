@@ -6,26 +6,26 @@ command="server start"
 while true; do
     case $command in
         'server shutdown'* )  
-            $DOCKER_COMPOSE_CMD down
+            docker compose down
             echo "AzerothCore stopped. You can now exit this terminal."
             exit 0 
             ;;
 
         'server stop' )  
-            $DOCKER_COMPOSE_CMD down
+            docker compose down
             echo "AzerothCore stopped."
             ;;
 
         'server start' )  
-            $DOCKER_COMPOSE_CMD down
-            $DOCKER_COMPOSE_CMD up -d --build
+            docker compose down
+            docker compose up -d --build
             echo "WORLD: World initialized"
             ;;
 
         'console' )  
             echo "WARNING: AMP cannot stop the server while attached. Use 'server shutdown' or 'server stop' to properly shut it down."
             echo "Attaching to worldserver... (Press Ctrl+P + Ctrl+Q to detach safely)"
-            $DOCKER_CMD attach worldserver
+            docker attach worldserver
             echo "Disconnected from Worldserver."
             ;;
 
