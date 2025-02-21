@@ -15,7 +15,14 @@
         "UpdateSourceData": "https://raw.githubusercontent.com/xSparky911x/AMPTemplates/main/azerothcorestart.sh",
         "UpdateSourceArgs": "azerothcorestart.sh",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
-        "OverwriteExistingFiles": true,
-        "PostUpdateCommand": "chmod +x {{$FullBaseDir}}/azerothcorestart.sh"
+        "OverwriteExistingFiles": true
+    },
+    {
+        "UpdateStageName": "Make Start Script Executable",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"chmod +x {{$FullBaseDir}}/azerothcorestart.sh\"",
+        "SkipOnFailure": false
     }
 ]
