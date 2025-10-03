@@ -2,8 +2,8 @@
     {
         "UpdateStageName": "Downloading game server files",
         "UpdateSourcePlatform": "Linux",
-        "UpdateSource": "GithubRelease",
-        "UpdateSourceData": "ExtractArchive",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://github.com/azerothcore/azerothcore-wotlk/archive/refs/heads/master.zip",
         "UpdateSourceArgs": "azerothcore/azerothcore-wotlk",
         "UnzipUpdateSource": true,
         "OverwriteExistingFiles": false,
@@ -11,11 +11,14 @@
         "OneShot": true
     },
     {
-        "UpdateStageName": "Compiling Game Server",
+        "UpdateStageName": "Build Game Server",
         "UpdateSourcePlatform": "Linux",
-        "UpdateSource": "StartApplication",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "bash -lc 'docker compose -f azerothcore-wotlk-*/docker-compose.yml up -d --build'",
         "UnzipUpdateSource": false,
         "OverwriteExistingFiles": false,
+        "UpdateSourceConditionSetting": "FirstRun",
+        "UpdateSourceConditionValue": "true",
         "DeleteAfterExtract": true,
         "OneShot": true
     }
