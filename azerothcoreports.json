@@ -1,0 +1,30 @@
+[
+    {
+        "Protocol": "TCP",
+        "Port": "8085",
+        "Name": "Main Game Port",
+        "Description": "Port used for main game traffic",
+        "Ref": "MainGamePort"
+    },
+    {
+        "Protocol": "TCP",
+        "Port": "7878",
+        "Name": "SOAP Port",
+        "Description": "Port used for main game traffic",
+        "Ref": "SOAPPort"
+    },
+    {
+        "Protocol": "TCP",
+        "Port": "3724",
+        "Name": "Authserver Port",
+        "Description": "Port used for main game traffic",
+        "Ref": "AuthserverPort"
+    },
+    {
+        "Protocol": "TCP",
+        "Port": "3306",
+        "Name": "Database Port",
+        "Description": "Port used for main game traffic",
+        "Ref": "DatabasePort"
+    }
+]
