@@ -1,38 +1,27 @@
 [
     {
-        "UpdateStageName": "Prepare directories",
-        "UpdateSourcePlatform": "Linux",
-        "UpdateSource": "Executable",
-        "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-lc \"set -e; base=\\\"{{$FullBaseDir}}\\\"; echo '[prep] base='$base; mkdir -p \\\"$base/azerothcore\\\"\"",
-        "UnzipUpdateSource": false,
-        "OverwriteExistingFiles": false,
-        "DeleteAfterExtract": false,
-        "OneShot": false
-    },
-    {
         "UpdateStageName": "Downloading game server files",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "FetchURL",
         "UpdateSourceData": "https://github.com/azerothcore/azerothcore-wotlk/archive/refs/heads/master.zip",
         "UpdateSourceArgs": "",
-        "UpdateSourceTarget": "azerothcore",
+        "UpdateSourceTarget": "{{$FullBaseDir}}",
         "UnzipUpdateSource": true,
         "OverwriteExistingFiles": false,
         "DeleteAfterExtract": true,
         "OneShot": true
     },
     {
-        "UpdateStageName": "Build Game Server",
+        "UpdateStageName": "Prepare repo and build",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-lc \"set -e; base=\\\"{{$FullBaseDir}}\\\"; work=\\\"$base/azerothcore\\\"; echo '[build] base='$base; cd \\\"$work\\\"; latest=$(ls -d azerothcore-wotlk-* 2>/dev/null | head -n1); if [ -z \\\"$latest\\\" ]; then echo '[build] no extracted directory found'; exit 1; fi; echo '[build] using '$latest; rm -rf \\\"$base/azerothcore-wotlk\\\"; mv \\\"$latest\\\" \\\"$base/\\\"; mv \\\"$base/$latest\\\" \\\"$base/azerothcore-wotlk\\\"; rm -rf \\\"$work\\\"; cd \\\"$base/azerothcore-wotlk\\\"; docker compose up -d --build\"",
+        "UpdateSourceArgs": "-lc \"set -e; base=\\\"{{$FullBaseDir}}\\\"; echo '[build] base='$base; dir=$(find \\\"$base\\\" -maxdepth 1 -type d -name 'azerothcore*-wotlk*' ! -name 'azerothcore-wotlk' | head -n1); if [ -z \\\"$dir\\\" ]; then echo '[build] no extracted directory found'; exit 1; fi; echo '[build] using '$dir; rm -rf \\\"$base/azerothcore-wotlk\\\"; mv \\\"$dir\\\" \\\"$base/azerothcore-wotlk\\\"; cd \\\"$base/azerothcore-wotlk\\\"; docker compose up -d --build\"",
         "UnzipUpdateSource": false,
         "OverwriteExistingFiles": false,
         "UpdateSourceConditionSetting": "FirstRun",
         "UpdateSourceConditionValue": "true",
-        "DeleteAfterExtract": true,
+        "DeleteAfterExtract": false,
         "OneShot": true
     }
 ]
