@@ -12,11 +12,22 @@
         "OneShot": true
     },
     {
-        "UpdateStageName": "Prepare repo and build",
+        "UpdateStageName": "Normalize directory name",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-lc \"set -e; base=\\\"{{$FullBaseDir}}\\\"; echo '[build] base='$base; shopt -s nullglob; latest=\\\"$base/azerothcore-wotlk-master\\\"; if [ ! -d \\\"$latest\\\" ]; then echo '[build] no extracted directory found'; exit 1; fi; echo '[build] using '$latest; rm -rf \\\"$base/azerothcore-wotlk\\\"; mv \\\"$latest\\\" \\\"$base/azerothcore-wotlk\\\"; cd \\\"$base/azerothcore-wotlk\\\"; docker compose up -d --build\"",
+        "UpdateSourceArgs": "-lc \"set -e; base=\\\"{{$FullBaseDir}}\\\"; echo '[rename] base='$base; shopt -s nullglob; candidates=(\\\"$base\\\"/azerothcore-wotlk-* \\\"$base\\\"/azerothcore-azerothcore-wotlk-*); if [ ${#candidates[@]} -eq 0 ]; then echo '[rename] no extracted directories found'; ls -1 \\\"$base\\\"; exit 1; fi; target=\\\"${candidates[0]}\\\"; echo '[rename] using '$target; rm -rf \\\"$base/azerothcore-wotlk\\\"; mv \\\"$target\\\" \\\"$base/azerothcore-wotlk\\\";\"",
+        "UnzipUpdateSource": false,
+        "OverwriteExistingFiles": false,
+        "DeleteAfterExtract": false,
+        "OneShot": true
+    },
+    {
+        "UpdateStageName": "Build Game Server",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-lc \"set -e; base=\\\"{{$FullBaseDir}}\\\"; cd \\\"$base/azerothcore-wotlk\\\"; docker compose up -d --build\"",
         "UnzipUpdateSource": false,
         "OverwriteExistingFiles": false,
         "UpdateSourceConditionSetting": "FirstRun",
