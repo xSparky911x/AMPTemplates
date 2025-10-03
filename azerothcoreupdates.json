@@ -1,5 +1,15 @@
 [
     {
+        "UpdateStageName": "Prepare directories",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "bash -lc 'set -e; root=\"{{$FullRootDir}}\"; mkdir -p \"$root/azerothcore-wotlk\"'",
+        "UnzipUpdateSource": false,
+        "OverwriteExistingFiles": false,
+        "DeleteAfterExtract": false,
+        "OneShot": false
+    },
+    {
         "UpdateStageName": "Downloading game server files",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "FetchURL",
