@@ -16,7 +16,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-lc \"set -e; base=\\\"{{$FullBaseDir}}\\\"; echo '[build] base='$base; dir=$(find \\\"$base\\\" -maxdepth 1 -type d -name 'azerothcore*-wotlk*' ! -name 'azerothcore-wotlk' | head -n1); if [ -z \\\"$dir\\\" ]; then echo '[build] no extracted directory found'; exit 1; fi; echo '[build] using '$dir; rm -rf \\\"$base/azerothcore-wotlk\\\"; mv \\\"$dir\\\" \\\"$base/azerothcore-wotlk\\\"; cd \\\"$base/azerothcore-wotlk\\\"; docker compose up -d --build\"",
+        "UpdateSourceArgs": "-lc \"set -e; base=\\\"{{$FullBaseDir}}\\\"; echo '[build] base='$base; shopt -s nullglob; latest=\\\"$base/azerothcore-wotlk-master\\\"; if [ ! -d \\\"$latest\\\" ]; then echo '[build] no extracted directory found'; exit 1; fi; echo '[build] using '$latest; rm -rf \\\"$base/azerothcore-wotlk\\\"; mv \\\"$latest\\\" \\\"$base/azerothcore-wotlk\\\"; cd \\\"$base/azerothcore-wotlk\\\"; docker compose up -d --build\"",
         "UnzipUpdateSource": false,
         "OverwriteExistingFiles": false,
         "UpdateSourceConditionSetting": "FirstRun",
