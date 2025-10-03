@@ -3,6 +3,7 @@
         "UpdateStageName": "Downloading game server files",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "GithubRelease",
+        "UpdateSourceData": "ExtractArchive",
         "UpdateSourceArgs": "azerothcore/azerothcore-wotlk",
         "UnzipUpdateSource": true,
         "OverwriteExistingFiles": false,
