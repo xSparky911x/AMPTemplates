@@ -15,7 +15,7 @@
         "UpdateStageName": "Build Game Server",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
-        "UpdateSourceData": "bash -lc 'cd azerothcore-wotlk && docker compose -f docker/docker-compose.yml up -d --build'",
+        "UpdateSourceData": "bash -lc 'set -e; root=\"{{$FullRootDir}}\"; cd \"$root\"; latest=$(ls -d azerothcore-azerothcore-wotlk-* | head -n1); mkdir -p azerothcore-wotlk; rm -rf azerothcore-wotlk/*; mv \"$latest\"/* azerothcore-wotlk/; rmdir \"$latest\"; cd azerothcore-wotlk/docker; docker compose up -d --build'",
         "UnzipUpdateSource": false,
         "OverwriteExistingFiles": false,
         "UpdateSourceConditionSetting": "FirstRun",
