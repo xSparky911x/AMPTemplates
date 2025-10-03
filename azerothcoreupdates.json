@@ -27,7 +27,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-lc \"set -e; base=\\\"{{$FullBaseDir}}\\\"; work=\\\"$base/azerothcore\\\"; echo '[build] base='$base; cd \\\"$work\\\"; latest=$(ls -d azerothcore-azerothcore-wotlk-* 2>/dev/null | head -n1); if [ -z \\\"$latest\\\" ]; then echo '[build] no extracted directory found'; exit 1; fi; echo '[build] using '$latest; rm -rf \\\"$base/azerothcore-wotlk\\\"; mv \\\"$latest\\\" \\\"$base/\\\"; mv \\\"$base/$latest\\\" \\\"$base/azerothcore-wotlk\\\"; rm -rf \\\"$work\\\"; cd \\\"$base/azerothcore-wotlk\\\"; docker compose up -d --build\"",
+        "UpdateSourceArgs": "-lc \"set -e; base=\\\"{{$FullBaseDir}}\\\"; work=\\\"$base/azerothcore\\\"; echo '[build] base='$base; cd \\\"$work\\\"; latest=$(ls -d azerothcore-wotlk-* 2>/dev/null | head -n1); if [ -z \\\"$latest\\\" ]; then echo '[build] no extracted directory found'; exit 1; fi; echo '[build] using '$latest; rm -rf \\\"$base/azerothcore-wotlk\\\"; mv \\\"$latest\\\" \\\"$base/\\\"; mv \\\"$base/$latest\\\" \\\"$base/azerothcore-wotlk\\\"; rm -rf \\\"$work\\\"; cd \\\"$base/azerothcore-wotlk\\\"; docker compose up -d --build\"",
         "UnzipUpdateSource": false,
         "OverwriteExistingFiles": false,
         "UpdateSourceConditionSetting": "FirstRun",
